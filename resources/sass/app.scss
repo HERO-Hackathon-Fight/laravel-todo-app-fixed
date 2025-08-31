@@ -1,0 +1,203 @@
+// Fonts
+@import url('https://fonts.bunny.net/css?family=Nunito');
+
+// Variables
+@import 'variables';
+
+// Bootstrap
+@import 'bootstrap/scss/bootstrap';
+
+// FontAwesome
+$fa-font-path: '@fortawesome/fontawesome-free/webfonts';
+@import '@fortawesome/fontawesome-free/scss/fontawesome';
+@import '@fortawesome/fontawesome-free/scss/regular';
+@import '@fortawesome/fontawesome-free/scss/solid';
+@import '@fortawesome/fontawesome-free/scss/brands';
+
+/* フォント読み込み */
+@import url('https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@400;500;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;500;700&display=swap');
+
+/* ========================================
+   テーマスタイル（!importantで強制適用）
+   ======================================== */
+
+/* ベーシックテーマ */
+body[data-theme="basic"],
+body.theme-basic {
+    background-color: #F5F7FA !important;
+    color: #222222 !important;
+    transition: all 0.3s ease;
+}
+
+body[data-theme="basic"] .navbar,
+body.theme-basic .navbar {
+    background-color: #ffffff !important;
+    border-bottom: 1px solid #e0e0e0 !important;
+}
+
+/* ブルーテーマ */
+body[data-theme="blue"],
+body.theme-blue {
+    background-color: #E8F0FE !important;
+    color: #1A237E !important;
+    transition: all 0.3s ease;
+}
+
+body[data-theme="blue"] .navbar,
+body.theme-blue .navbar {
+    background-color: #C5D9F1 !important;
+}
+
+body[data-theme="blue"] .navbar-brand,
+body[data-theme="blue"] .nav-link {
+    color: #1A237E !important;
+}
+
+/* グリーンテーマ */
+body[data-theme="green"],
+body.theme-green {
+    background-color: #E3F6F5 !important;
+    color: #22223B !important;
+    transition: all 0.3s ease;
+}
+
+body[data-theme="green"] .navbar,
+body.theme-green .navbar {
+    background-color: #658e7c !important;
+}
+
+body[data-theme="green"] .navbar-brand,
+body[data-theme="green"] .nav-link {
+    color: #ffffff !important;
+}
+
+/* ========================================
+   フォントスタイル（!importantで強制適用）
+   ======================================== */
+
+/* 標準フォント */
+body[data-font="standard"],
+body.font-standard {
+    font-family: 'Nunito', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif !important;
+    font-size: 16px !important;
+    line-height: 1.6 !important;
+    letter-spacing: normal !important;
+}
+
+/* 幼児層向け */
+body[data-font="child"],
+body.font-child {
+    font-family: 'M PLUS Rounded 1c', 'Hiragino Sans', 'Yu Gothic UI', sans-serif !important;
+    font-size: 18px !important;
+    line-height: 1.8 !important;
+    letter-spacing: 0.05em !important;
+}
+
+/* ヤング層向け */
+body[data-font="young"],
+body.font-young {
+    font-family: 'Noto Sans JP', 'Hiragino Kaku Gothic ProN', 'Yu Gothic', sans-serif !important;
+    font-size: 16px !important;
+    line-height: 1.6 !important;
+    letter-spacing: 0.02em !important;
+}
+
+/* シニア層向け */
+body[data-font="senior"],
+body.font-senior {
+    font-family: 'Noto Serif JP', 'Hiragino Mincho ProN', 'Yu Mincho', serif !important;
+    font-size: 20px !important;
+    line-height: 1.9 !important;
+    letter-spacing: 0.08em !important;
+}
+
+/* ========================================
+   キーボードアクセシビリティ対応（既存保持）
+   ======================================== */
+
+/* セレクトボックスのフォーカス表示改善（各テーマ対応） */
+#theme-select:focus,
+#font-select:focus {
+    outline: 3px solid #007bff !important;
+    outline-offset: 2px !important;
+    box-shadow: 0 0 0 4px rgba(0, 123, 255, 0.25) !important;
+    border-color: #007bff !important;
+    background-color: #fff !important;
+    transform: scale(1.02) !important;
+    transition: all 0.2s ease !important;
+}
+
+/* テーマ別フォーカス表示 */
+body[data-theme="basic"] #theme-select:focus,
+body[data-theme="basic"] #font-select:focus {
+    outline-color: #6c757d !important;
+    box-shadow: 0 0 0 4px rgba(108, 117, 125, 0.25) !important;
+}
+
+body[data-theme="blue"] #theme-select:focus,
+body[data-theme="blue"] #font-select:focus {
+    outline-color: #1A237E !important;
+    box-shadow: 0 0 0 4px rgba(26, 35, 126, 0.25) !important;
+}
+
+body[data-theme="green"] #theme-select:focus,
+body[data-theme="green"] #font-select:focus {
+    outline-color: #658e7c !important;
+    box-shadow: 0 0 0 4px rgba(101, 142, 124, 0.25) !important;
+}
+
+/* ラベルのフォーカス連動表示 */
+#theme-select:focus + label,
+#font-select:focus + label,
+label[for="theme-select"]:has(+ #theme-select:focus),
+label[for="font-select"]:has(+ #font-select:focus) {
+    font-weight: bold !important;
+    color: inherit !important;
+    text-shadow: 0 0 2px rgba(0, 0, 0, 0.1) !important;
+}
+
+/* キーボードナビゲーション用のスキップリンク */
+.skip-link {
+    position: absolute !important;
+    top: -40px !important;
+    left: 6px !important;
+    background: #000000 !important;
+    color: white !important;
+    padding: 8px !important;
+    text-decoration: none !important;
+    border-radius: 4px !important;
+    font-size: 14px !important;
+    z-index: 9999 !important;
+    transition: top 0.2s ease !important;
+}
+
+.skip-link:focus {
+    top: 6px !important;
+}
+
+/* セレクトボックスのオプション項目も見やすく */
+#theme-select option,
+#font-select option {
+    padding: 4px 8px !important;
+    font-size: 14px !important;
+}
+
+/* ホバー時の表示改善（マウス操作との統一） */
+#theme-select:hover,
+#font-select:hover {
+    border-color: #007bff !important;
+    box-shadow: 0 0 0 2px rgba(0, 123, 255, 0.15) !important;
+    transform: scale(1.01) !important;
+    transition: all 0.2s ease !important;
+}
+
+/* セレクトボックスのスタイル */
+#theme-select, #font-select {
+    border-radius: 20px;
+    border: 1px solid #ccc;
+    padding: 4px 8px;
+    font-size: 14px;
+    background: white;
+}

@@ -1,0 +1,381 @@
+/* \css\app.css */
+
+/* ========================================
+   テーマ切り替え対応 Todo App スタイル
+   ユニバーサルデザイン・高コントラスト対応
+========================================= */
+
+/* ベース設定 */
+:root {
+    --transition-speed: 0.3s;
+}
+
+body {
+    transition: all var(--transition-speed) ease;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* ========================================
+   ナビゲーションバー - テーマ対応
+========================================= */
+
+.navbar {
+    transition: all var(--transition-speed) ease;
+    border-bottom: 1px solid var(--nav-border, #dee2e6);
+}
+
+/* Basic Theme Navigation */
+[data-theme="basic"] .navbar {
+    background-color: #f8f9fa !important;
+}
+
+[data-theme="basic"] .navbar .navbar-brand,
+[data-theme="basic"] .navbar .nav-link {
+    color: #495057 !important;
+    font-weight: 600;
+}
+
+[data-theme="basic"] .navbar .nav-link:hover {
+    color: #212529 !important;
+}
+
+[data-theme="basic"] {
+    --nav-border: #dee2e6;
+}
+
+/* Blue Theme Navigation */
+[data-theme="blue"] .navbar {
+    background-color: #e3f2fd !important;
+}
+
+[data-theme="blue"] .navbar .navbar-brand,
+[data-theme="blue"] .navbar .nav-link {
+    color: #0d47a1 !important;
+    font-weight: 600;
+}
+
+[data-theme="blue"] .navbar .nav-link:hover {
+    color: #1565c0 !important;
+}
+
+[data-theme="blue"] {
+    --nav-border: #90caf9;
+}
+
+/* Green Theme Navigation */
+[data-theme="green"] .navbar {
+    background-color: #e8f5e8 !important;
+}
+
+[data-theme="green"] .navbar .navbar-brand,
+[data-theme="green"] .navbar .nav-link {
+    color: #1b5e20 !important;
+    font-weight: 600;
+}
+
+[data-theme="green"] .navbar .nav-link:hover {
+    color: #2e7d32 !important;
+}
+
+[data-theme="green"] {
+    --nav-border: #a5d6a7;
+}
+
+/* ========================================
+   テーマ切り替えボタン
+========================================= */
+
+.theme-switcher .btn {
+    margin: 0 2px;
+    transition: all var(--transition-speed) ease;
+}
+
+.theme-switcher .btn.active {
+    transform: scale(1.1);
+    box-shadow: 0 0 0 2px rgba(0,0,0,0.2);
+}
+
+/* ========================================
+   Todo アイテム - メインコンテンツ
+========================================= */
+
+.todo-item {
+    padding: 16px 20px;
+    margin: 12px 0;
+    border-radius: 12px;
+    border-left: 5px solid var(--todo-accent, #6c757d);
+    background: var(--todo-bg, #ffffff);
+    color: var(--todo-text, #495057);
+    transition: all var(--transition-speed) ease;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    position: relative;
+}
+
+.todo-item:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+    background: var(--todo-hover, #f8f9fa);
+}
+
+.todo-item.completed {
+    opacity: 0.6;
+    text-decoration: line-through;
+}
+
+.todo-item .card {
+    border: none;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    transition: all 0.3s ease;
+}
+
+.todo-item .card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 16px rgba(0,0,0,0.15);
+}
+
+.todo-item.completed .card {
+    opacity: 0.7;
+}
+
+.todo-item.completed .todo-text {
+    text-decoration: line-through;
+}
+
+.todo-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.todo-text {
+    flex: 1;
+    font-size: 17px;
+    font-weight: 500;
+    line-height: 1.4;
+    color: var(--todo-text, #495057);
+}
+
+.todo-actions {
+    display: flex;
+    gap: 8px;
+}
+
+.todo-actions .btn {
+    border-radius: 20px;
+    font-size: 13px;
+    padding: 6px 14px;
+    font-weight: 600;
+    transition: all var(--transition-speed) ease;
+}
+
+.todo-actions .btn:hover {
+    transform: scale(1.05);
+}
+
+/* ========================================
+   Todo フォーム
+========================================= */
+
+.todo-form {
+    background: var(--form-bg, #ffffff);
+    padding: 24px;
+    border-radius: 16px;
+    margin-bottom: 24px;
+    border: 2px solid var(--todo-accent, #6c757d);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.todo-form input[type="text"] {
+    border: 2px solid var(--todo-accent, #6c757d);
+    border-radius: 8px;
+    padding: 12px 16px;
+    font-size: 16px;
+    width: 100%;
+    transition: all var(--transition-speed) ease;
+}
+
+.todo-form input[type="text"]:focus {
+    outline: none;
+    border-color: var(--todo-accent, #6c757d);
+    box-shadow: 0 0 0 4px var(--todo-focus, rgba(108, 117, 125, 0.25));
+    transform: scale(1.02);
+}
+
+.todo-form .btn-primary {
+    background-color: var(--todo-accent, #6c757d);
+    border-color: var(--todo-accent, #6c757d);
+    color: white;
+    padding: 12px 24px;
+    border-radius: 8px;
+    font-weight: 700;
+    margin-top: 12px;
+    transition: all var(--transition-speed) ease;
+}
+
+.todo-form .btn-primary:hover {
+    background-color: var(--todo-accent-dark, #5a6268);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.25);
+}
+
+/* ========================================
+   Basic Theme (グレー系・高コントラスト)
+========================================= */
+
+[data-theme="basic"] {
+    --todo-bg: #ffffff;
+    --todo-hover: #f8f9fa;
+    --todo-accent: #6c757d;
+    --todo-accent-dark: #5a6268;
+    --todo-text: #212529;
+    --form-bg: #ffffff;
+    --todo-focus: rgba(108, 117, 125, 0.25);
+}
+
+[data-theme="basic"] .todo-item {
+    border: 1px solid #e9ecef;
+}
+
+[data-theme="basic"] body {
+    background-color: #f8f9fa;
+}
+
+/* ========================================
+   Blue Theme (青系・集中力向上)
+========================================= */
+
+[data-theme="blue"] {
+    --todo-bg: #e3f2fd;
+    --todo-hover: #bbdefb;
+    --todo-accent: #1976d2;
+    --todo-accent-dark: #1565c0;
+    --todo-text: #0d47a1;
+    --form-bg: #e3f2fd;
+    --todo-focus: rgba(25, 118, 210, 0.25);
+}
+
+[data-theme="blue"] .todo-item {
+    background: linear-gradient(135deg, #e3f2fd 0%, #bbdefb 100%);
+    border-left-color: #1976d2;
+}
+
+[data-theme="blue"] body {
+    background: linear-gradient(135deg, #e8f4fd 0%, #f3f9ff 100%);
+}
+
+/* ========================================
+   Green Theme (緑系・リラックス効果)
+========================================= */
+
+[data-theme="green"] {
+    --todo-bg: #e8f5e8;
+    --todo-hover: #c8e6c9;
+    --todo-accent: #388e3c;
+    --todo-accent-dark: #2e7d32;
+    --todo-text: #1b5e20;
+    --form-bg: #e8f5e8;
+    --todo-focus: rgba(56, 142, 60, 0.25);
+}
+
+[data-theme="green"] .todo-item {
+    background: linear-gradient(135deg, #e8f5e8 0%, #c8e6c9 100%);
+    border-left-color: #388e3c;
+}
+
+[data-theme="green"] body {
+    background: linear-gradient(135deg, #f1f8e9 0%, #f9fbe7 100%);
+}
+
+/* ========================================
+   アクセシビリティ対応
+========================================= */
+
+/* フォーカス可視化 */
+.btn:focus,
+input:focus {
+    outline: 3px solid var(--todo-accent, #6c757d);
+    outline-offset: 2px;
+}
+
+/* 縮小モーション無効化対応 */
+@media (prefers-reduced-motion: reduce) {
+    * {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+}
+
+/* ハイコントラスト対応 */
+@media (prefers-contrast: high) {
+    .todo-item {
+        border: 2px solid var(--todo-accent);
+    }
+    
+    .todo-text {
+        font-weight: 700;
+    }
+}
+
+/* ========================================
+   レスポンシブデザイン
+========================================= */
+
+@media (max-width: 768px) {
+    .todo-item {
+        padding: 12px 16px;
+        margin: 8px 0;
+    }
+    
+    .todo-content {
+        flex-direction: column;
+        gap: 8px;
+        align-items: stretch;
+    }
+    
+    .todo-actions {
+        justify-content: center;
+    }
+    
+    .theme-switcher .btn {
+        font-size: 12px;
+        padding: 4px 8px;
+    }
+    
+    .d-flex.justify-content-between {
+        flex-direction: column;
+        gap: 15px;
+    }
+    
+    .filter-buttons, .action-buttons {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+    
+    .todo-content {
+        flex-direction: column;
+        align-items: stretch !important;
+        gap: 15px;
+    }
+    
+    .todo-actions {
+        justify-content: center;
+    }
+}
+
+/* フィルターボタンのスタイル */
+.filter-buttons .btn {
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.filter-buttons .btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+/* 空の状態表示 */
+.text-center .fa-inbox {
+    opacity: 0.3;
+}
