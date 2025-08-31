@@ -1,0 +1,5 @@
+/tests
+/storage/logs
+/.git
+/node_modules
+*.log
