@@ -18,28 +18,16 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // 初期設定（data属性 + クラス名の両方で適用）
     function applyTheme(theme) {
-        // 既存のテーマクラスを削除
         body.classList.remove('theme-basic', 'theme-blue', 'theme-green');
-        
-        // data属性を設定
         body.setAttribute('data-theme', theme);
-        
-        // クラス名も設定（念のため）
         body.classList.add(`theme-${theme}`);
-        
         console.log('Theme applied:', theme);
     }
     
     function applyFont(font) {
-        // 既存のフォントクラスを削除
         body.classList.remove('font-standard', 'font-child', 'font-young', 'font-senior');
-        
-        // data属性を設定
         body.setAttribute('data-font', font);
-        
-        // クラス名も設定（念のため）
         body.classList.add(`font-${font}`);
-        
         console.log('Font applied:', font);
     }
     
@@ -137,10 +125,11 @@ document.addEventListener('DOMContentLoaded', function() {
                 }, 10);
             }
         });
+    }
     
     
     // ========================================
-    // ショートカットキー機能（重要！）
+    // ショートカットキー機能
     // ========================================
     
     document.addEventListener('keydown', function(e) {
@@ -175,10 +164,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 console.log('Shortcut: Alt+F - Font selector focused');
             }
         }
-
-
     });
-}
 
     // ========================================
     // Todo機能（既存のまま保持）

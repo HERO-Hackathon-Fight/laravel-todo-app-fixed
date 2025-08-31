@@ -47,14 +47,6 @@
         ],
         "post-create-project-cmd": [
             "@php artisan key:generate --ansi"
-        ],
-        "railway-build": [
-            "npm run build"
-        ],
-        "railway-deploy": [
-            "php artisan migrate --force",
-            "php artisan config:cache",
-            "php artisan route:cache"
         ]
     },
     "extra": {
@@ -69,7 +61,8 @@
         "allow-plugins": {
             "pestphp/pest-plugin": true,
             "php-http/discovery": true
-        }
+        },
+        "platform-check": false
     },
     "minimum-stability": "stable",
     "prefer-stable": true
