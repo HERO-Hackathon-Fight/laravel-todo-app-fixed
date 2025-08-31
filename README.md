@@ -65,5 +65,25 @@ If you discover a security vulnerability within Laravel, please send an e-mail t
 
 The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
 
+## Railway Deployment
 
-<!-- test1 -->
+This Laravel Todo Application is deployed on Railway.
+
+### Project Details
+- **Framework**: Laravel 11
+- **Database**: PostgreSQL
+- **Environment**: Production
+- **Team**: HERO Hackathon - Fight!!
+
+### Features
+- Create, Read, Update, Delete Todo items
+- PostgreSQL database integration
+- Responsive web interface
+- Session-based storage
+
+### Development Team
+Built by the web-todo-app-devs team for the HERO Hackathon.
+
+### Live URL
+The application will be available at the Railway-generated URL after deployment.
+
